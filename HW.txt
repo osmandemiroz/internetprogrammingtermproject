@@ -1,0 +1,130 @@
+BİM222 - INTERNET PROGRAMMING - HOMEWORK 1
+Create a responsive website for university (using bootstrap). Your site should have at least 7
+pages. The names of the web pages are listed below:
+
+Page 1: home.html
+Page 2: university.html
+Page 3: academics.html
+Page 4: students.html
+Page 5: campuslife.html
+Page 6: login.html
+Page 7: documents.html
+
+General features to be provided on every page:
+• Each page should have an expressive title.
+• Each page should contain some meaningful metadata.
+• Each page should be well-formed and validated (you can use the Markup Validation
+Service - https://validator.w3.org/).
+• Each page should have a navigational bar on the left containing other page links, in
+which the font size of the name of the active page seen larger than the others.
+• Form elements should have proper input types and input attributes. Try to be userfriendly and informative to your users (for example link the form elements with their
+labels, use placeholders, etc.).
+• Each page should have a footer at the bottom containing copyright and authorship
+information.
+• Each page should be similar to the interface in Figure 1. Contents are left to you.
+• "A semantic Web allows data to be shared and reused across applications, enterprises,
+and communities". Hence, use/include semantic tags whenever possible.
+• Responsive Web Design: Each web page must be rendered well on different screen
+sizes (https://getbootstrap.com/docs/5.0/layout/breakpoints/).
+•
+
+HOME
+•
+
+There must be at least one image of the university. When you mouse over the
+image, the image should enlarge.
+
+•
+
+On this page, announcements of the university should be displayed in the form of
+a list.
+
+•
+
+Clicking on the tabs on the left should open the relevant page.
+
+•
+
+The currently selected tab should be shown as selected. (The selected tab should
+be in larger font size.)
+
+UNIVERSITY
+•
+
+This page should contain information about the university. Examples of this
+information are "About Us", "Numbers of Students and Staff", "Administrative Units"
+etc. can be given. The preparation of the contents herein is entirely left to you.
+
+•
+
+There should be a show less/more button. When this button is pressed, the relevant
+text should be displayed as shorter or longer.
+
+•
+
+There should be a picture of the university on this page, and the picture should be
+transparent when hovering over the picture.
+
+ACADEMICS
+•
+
+On this page, information about faculties, institutes and vocational higher schools
+should be given in 3 separate tables.
+
+STUDENTS
+•
+•
+
+•
+
+This page may contain some useful information for students. Page content is up to
+you.
+This tab should have "Student Login" and "Documents" subheadings. When the
+Students link is hovered, these two subheadings will appear and the user will select
+one of them.
+When you click on the sub-tabs on "Students" tab, the relevant page should open.
+
+STUDENT LOGIN
+•
+•
+
+In this section, login with username and password. Keep the user password secret.
+When the user presses the login button, it redirects to the "Home" page.
+It should be checked whether the user name and password fields are empty. If
+these fields are empty, they should give a warning and should not redirect to the
+"Home" page.
+
+DOCUMENTS
+•
+
+This page should contain some documents that students can use. The relevant
+documents must be downloaded when the links are clicked.
+
+CAMPUS LIFE
+•
+
+There should be a video of the university on this page. When the user clicks the
+video, it should start playing (Note: Do not download or put any video file into your
+homework folder. Import them directly by giving the exact link of the web page should be an external link, not local -, or you may use YouTube videos. However,
+the video file must be rendered on the same page (campuslife.html), not in a new
+window).
+
+Figure 1: Simple interface design template
+
+Some Important Notes
+Note 1: This is NOT a group assignment. It should be done individually.
+Note 2: Copying/Giving any portion of your homework solution from/to other student(s) will
+mean getting 0 as a score.
+Note 3: No homework will be accepted by e-mail or after the deadlines!! Please do NOT send
+any work by e-mail..."
+Note 4: Projects that do not work completely will receive "0" points.
+Note 5: Use HTML and CSS codes only.
+Note 6: Use Sublime, Notepad, Notepad++, etc., to write the codes of your pages. DO NOT
+use another program to create these files. These files should be edited as pure HTML, not
+including extra control codes inserted by other programs, such as Word.
+Note 7: The screenshots above are given as examples of the corresponding web pages. To
+get higher grades, you must enrich your site's content as much as possible.
+Note 8: You must submit all your work (HTML, CSS codes, photos, i.e., what are necessary
+to see/run your work) through ESTUOYS within the submission deadlines.
+
+
