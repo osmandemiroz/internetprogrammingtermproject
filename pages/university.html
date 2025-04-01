@@ -1,117 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about our university's history, mission, and administrative structure.">
-    <meta name="keywords" content="university history, university mission, administrative units, university structure">
-    <meta name="author" content="[Your Name]">
-    <title>About Our University</title>
+    <meta name="description" content="Eskişehir Teknik Üniversitesi hakkında bilgi, öğrenci ve personel sayıları, idari birimler ve daha fazlası">
+    <meta name="keywords" content="ESTU, Eskişehir Teknik Üniversitesi, üniversite bilgileri, idari birimler, öğrenci sayıları">
+    <meta name="author" content="Eskişehir Teknik Üniversitesi">
+    <title>Üniversitemiz - Eskişehir Teknik Üniversitesi</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 <body>
     <!-- Navigation Sidebar -->
-    <nav class="nav-sidebar" aria-label="Main navigation">
+    <nav class="nav-sidebar" aria-label="Ana navigasyon">
         <div class="nav-header">
-            <h2>University</h2>
+            <h2>ESTÜ</h2>
         </div>
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="university.html" class="active">University</a></li>
-            <li><a href="academics.html">Academics</a></li>
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="university.html" class="active">Üniversitemiz</a></li>
+            <li><a href="academics.html">Akademik</a></li>
             <li class="dropdown">
-                <a href="students.html">Students</a>
+                <a href="students.html">Öğrenciler</a>
                 <ul class="dropdown-menu">
-                    <li><a href="login.html">Student Login</a></li>
-                    <li><a href="documents.html">Documents</a></li>
+                    <li><a href="login.html">Öğrenci Girişi</a></li>
+                    <li><a href="documents.html">Belgeler</a></li>
                 </ul>
             </li>
-            <li><a href="campuslife.html">Campus Life</a></li>
+            <li><a href="campuslife.html">Kampüs Yaşamı</a></li>
         </ul>
     </nav>
+
+    <!-- Mobile Navigation Toggle -->
+    <button id="mobileNavToggle" class="btn btn-primary d-md-none" aria-label="Menüyü aç/kapat">
+        <span class="hamburger-icon"></span>
+    </button>
 
     <!-- Main Content -->
     <main class="main-content">
         <header class="page-header">
-            <h1>About Our University</h1>
-            <p class="lead">Excellence in education since 1950</p>
+            <h1>Üniversitemiz</h1>
+            <p class="lead">Bilim, Teknoloji ve İnovasyonun Merkezi</p>
         </header>
 
-        <!-- University Image Section -->
-        <section class="university-image mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <img src="../assets/images/university.jpg" 
-                         alt="University Campus" 
-                         class="img-fluid rounded"
-                         onmouseover="this.style.opacity='0.8'"
-                         onmouseout="this.style.opacity='1'">
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section class="about-us mb-4">
-            <h2>About Us</h2>
+        <!-- About Section -->
+        <section class="about-section mb-5">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-8">
-                            <p id="aboutText" class="mb-0">
-                                Founded in 1950, our university has been committed to providing quality education 
-                                and fostering innovation in research and development. We believe in creating an 
-                                environment that promotes academic excellence, critical thinking, and personal growth.
-                            </p>
+                        <div class="col-md-6">
+                            <h2>Hakkımızda</h2>
+                            <div id="aboutText">
+                                <p>Eskişehir Teknik Üniversitesi, 18 Mayıs 2018 tarih ve 30425 sayılı Resmî Gazete'de yayımlanan 7141 sayılı Kanun ile kurulmuştur. Üniversitemiz, bilim, kültür ve aynı zamanda bir gençlik kenti olan Eskişehir'in merkezinde yer alan 3 yerleşkede 6 Fakülte, 3 Meslek Yüksekokulu, 1 Yüksekokul ve 3 Enstitü ve 8 Araştırma ve Uygulama Merkezi'nden oluşmaktadır.</p>
+                                <p>ESTÜ, eğitim öğretim ve araştırma faaliyetlerini yürüttüğü güçlü altyapıya sahip birimlerinde, her biri alanındaki gelişmeleri takip eden ve tüm zamanını öğrencileriyle paylaşan yetkin öğretim kadrosuyla, öğrencilerini yaratıcı ve dinamik eğitim ortamlarında, geleceğe en donanımlı ve rekabet edebilir bireyler olarak hazırlamak üzere çalışmaktadır.</p>
+                            </div>
+                            <button id="showMoreBtn" class="btn btn-primary mt-3">Daha Fazla Göster</button>
                         </div>
-                        <div class="col-md-4 text-end">
-                            <button class="btn btn-primary" onclick="toggleAboutText()">Read More</button>
+                        <div class="col-md-6">
+                            <div class="img-hover-zoom">
+                                <img src="../assets/images/estu_banner.png" 
+                                     alt="ESTÜ Binası" 
+                                     class="img-fluid rounded"
+                                     style="opacity: 1; transition: opacity 0.3s ease;">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="statistics mb-4">
-            <h2>University Statistics</h2>
+        <!-- Numbers Section -->
+        <section class="numbers-section mb-5">
+            <h2>Sayılarla ESTÜ</h2>
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body text-center">
-                                    <h3>25,000+</h3>
-                                    <p>Students</p>
-                                </div>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="stats-card">
+                                <div class="stats-number">1598</div>
+                                <div class="stats-label">Personel</div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body text-center">
-                                    <h3>1,500+</h3>
-                                    <p>Faculty Members</p>
-                                </div>
+                        <div class="col-md-3">
+                            <div class="stats-card">
+                                <div class="stats-number">14392</div>
+                                <div class="stats-label">Öğrenci</div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body text-center">
-                                    <h3>100+</h3>
-                                    <p>Programs</p>
-                                </div>
+                        <div class="col-md-3">
+                            <div class="stats-card">
+                                <div class="stats-number">3</div>
+                                <div class="stats-label">Enstitü</div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body text-center">
-                                    <h3>50+</h3>
-                                    <p>Research Centers</p>
-                                </div>
+                        <div class="col-md-3">
+                            <div class="stats-card">
+                                <div class="stats-number">6</div>
+                                <div class="stats-label">Fakülte</div>
                             </div>
                         </div>
                     </div>
@@ -120,43 +113,42 @@
         </section>
 
         <!-- Administrative Units Section -->
-        <section class="administrative-units mb-4">
-            <h2>Administrative Units</h2>
+        <section class="admin-units-section mb-5">
+            <h2>İdari Birimler</h2>
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5>Office of the President</h5>
-                                    <p>Leading the university's strategic direction and overall administration.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5>Academic Affairs</h5>
-                                    <p>Overseeing academic programs, faculty affairs, and student success.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5>Student Affairs</h5>
-                                    <p>Managing student services, campus life, and student development.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5>Research & Development</h5>
-                                    <p>Promoting research initiatives and innovation across disciplines.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Birim Adı</th>
+                                    <th>Görev</th>
+                                    <th>İletişim</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rektörlük</td>
+                                    <td>Üniversite yönetimi ve stratejik planlama</td>
+                                    <td>rektorluk@eskisehir.edu.tr</td>
+                                </tr>
+                                <tr>
+                                    <td>Öğrenci İşleri</td>
+                                    <td>Öğrenci kayıt, ders seçimi ve mezuniyet işlemleri</td>
+                                    <td>ogrenci@eskisehir.edu.tr</td>
+                                </tr>
+                                <tr>
+                                    <td>Personel Daire Başkanlığı</td>
+                                    <td>Personel yönetimi ve işlemleri</td>
+                                    <td>personel@eskisehir.edu.tr</td>
+                                </tr>
+                                <tr>
+                                    <td>Bilgi İşlem</td>
+                                    <td>Teknolojik altyapı ve sistem yönetimi</td>
+                                    <td>bilgiislem@eskisehir.edu.tr</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -168,10 +160,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2024 University Name. All rights reserved.</p>
+                    <p>&copy; 2024 Eskişehir Teknik Üniversitesi. Tüm hakları saklıdır.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p>Created by [Your Name]</p>
+                    <p>İletişim: info@eskisehir.edu.tr</p>
                 </div>
             </div>
         </div>
@@ -182,18 +174,49 @@
     
     <!-- Custom JS -->
     <script>
-        function toggleAboutText() {
-            const aboutText = document.getElementById('aboutText');
-            const button = event.target;
-            
-            if (aboutText.style.maxHeight) {
-                aboutText.style.maxHeight = null;
-                button.textContent = 'Read More';
+        // Mobile Navigation Toggle
+        document.getElementById('mobileNavToggle').addEventListener('click', function() {
+            document.querySelector('.nav-sidebar').classList.toggle('show');
+        });
+
+        // Dropdown Toggle
+        document.querySelectorAll('.dropdown > a').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        // Show More/Less Button
+        const aboutText = document.getElementById('aboutText');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        let isExpanded = false;
+
+        showMoreBtn.addEventListener('click', function() {
+            if (!isExpanded) {
+                aboutText.innerHTML += `
+                    <p>Üniversitemiz 2 Eylül Yerleşkesinde bulunan uluslararası Hasan Polatkan Havalimanının işletmesi Havacılık ve Uzay Bilimleri Fakültemiz tarafından yürütülmektedir. Hasan Polatkan Havalimanına haftanın çeşitli günlerinde farklı havayolu şirketleri tarafından gerçekleştirilen uluslararası uçuşlar bulunmaktadır.</p>
+                    <p>ESTÜ, öğrencilerine modern eğitim olanakları, güçlü akademik kadro ve araştırma imkanları sunmaktadır. Üniversitemiz, uluslararası standartlarda eğitim vererek, öğrencilerini geleceğin teknolojilerine hazırlamaktadır.</p>
+                `;
+                showMoreBtn.textContent = 'Daha Az Göster';
             } else {
-                aboutText.style.maxHeight = aboutText.scrollHeight + 'px';
-                button.textContent = 'Read Less';
+                aboutText.innerHTML = `
+                    <p>Eskişehir Teknik Üniversitesi, 18 Mayıs 2018 tarih ve 30425 sayılı Resmî Gazete'de yayımlanan 7141 sayılı Kanun ile kurulmuştur. Üniversitemiz, bilim, kültür ve aynı zamanda bir gençlik kenti olan Eskişehir'in merkezinde yer alan 3 yerleşkede 6 Fakülte, 3 Meslek Yüksekokulu, 1 Yüksekokul ve 3 Enstitü ve 8 Araştırma ve Uygulama Merkezi'nden oluşmaktadır.</p>
+                    <p>ESTÜ, eğitim öğretim ve araştırma faaliyetlerini yürüttüğü güçlü altyapıya sahip birimlerinde, her biri alanındaki gelişmeleri takip eden ve tüm zamanını öğrencileriyle paylaşan yetkin öğretim kadrosuyla, öğrencilerini yaratıcı ve dinamik eğitim ortamlarında, geleceğe en donanımlı ve rekabet edebilir bireyler olarak hazırlamak üzere çalışmaktadır.</p>
+                `;
+                showMoreBtn.textContent = 'Daha Fazla Göster';
             }
-        }
+            isExpanded = !isExpanded;
+        });
+
+        // Image Hover Effect
+        const universityImage = document.querySelector('.img-hover-zoom img');
+        universityImage.addEventListener('mouseover', function() {
+            this.style.opacity = '0.8';
+        });
+        universityImage.addEventListener('mouseout', function() {
+            this.style.opacity = '1';
+        });
     </script>
 </body>
 </html> 
