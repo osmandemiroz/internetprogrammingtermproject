@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Columns with Flexbox</title>
+    <link rel="stylesheet" href="secondattemt.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1em;
+        }
+
+        .content {
+            margin: auto;
+            padding: 10px;
+        }
+
+        .form {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: black 0px 0px 1px;
+        }
+
+        .form input,
+        .form label {
+            margin: 5px;
+        }
+
+        .form fieldset {
+            background-color: rgb(235, 235, 235);
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: black 0px 0px 10px;
+
+        }
+
+        .form legend {
+            box-shadow: black 0px 0px 10px;
+            border-radius: 10px;
+            background-color: rgb(199, 181, 181);
+        }
+
+        .form button {
+            margin: 10px;
+
+        }
+
+        #matrix-container {
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            display: grid;
+        }
+
+        .cell {
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3em;
+            height: 3em;
+            border: 1px solid #000;
+            font-size: 0.75em;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cell:hover {
+            transform: scale(1.1);
+        }
+
+        .cell.clicked {
+            background-color: #ffb1b1;
+            box-shadow: #000 0 0 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 content">
+                <form class="form" id="user-form">
+                    <fieldset>
+                        <legend>
+                            <h3 style="margin: 0px; padding: 1%">User Form</h3>
+                        </legend>
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" title="Please enter a valid name"><br>
+                        <label for="surname">Surname:</label><br>
+                        <input type="text" id="surname" name="surname" title="Please enter a valid surname"><br>
+                        <label for="email">Email:</label><br>
+                        <input value="admin@admin.com" type="email" id="email" name="email"
+                            title="Please enter a valid email"><br>
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="tel" id="phone" name="phone" placeholder="05-- --- ----"
+                            pattern="[0-9]{4} [0-9]{3} [0-9]{4}" title="Please enter a valid phone number"><br>
+                        <label for="age">Age:</label><br>
+                        <input type="number" id="age" name="age" min="1" max="120" title="Please enter a valid age"><br>
+                        <button id="login-button" type="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4 content">
+
+                <div id="admin-interface" style="display: none;">
+                    <h2>Admin Interface</h2>
+                    <label for="rows">Rows:</label>
+                    <input type="number" id="rows"><br>
+                    <label for="columns">Columns:</label>
+                    <input type="number" id="columns"><br>
+                    <button id="setBtn">Set</button>
+                </div>
+                <div id="matrix-container" style="display: none;">
+                    <h3 style="text-align: center;">Please Select Your Seat</h3>
+                </div>
+            </div>
+            <div class="col-md-4 content">
+                <div class="Reservation">
+                    <h2>Reservation Details</h2>
+                    <p>Name: <span id="userName"></span></p>
+                    <p>Selected Seats: <span id="selectedSeats"></span></p>
+                    <p>Total Price: <span id="totalPrice"></span></p>
+                    <button id="confirmBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const matrixContainer = document.getElementById('matrix-container');
+        const form = document.getElementById('user-form');
+        const userName = document.getElementById('userName');
+        const selectedSeats = document.getElementById('selectedSeats');
+        const totalPrice = document.getElementById('totalPrice');
+        let rows = 0;
+        var cols = 0;
+        let currentLetter = 'A';
+        let currentNumber = 1;
+        var color = "blue";
+        let seats = [];
+        function generateSeat() {
+            matrixContainer.style.gridTemplateColumns = 'repeat(${cols}, 3em)';
+
+            for (let i = 0; i < rows * cols; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.textContent = `${currentLetter}${currentNumber}`;
+                cell.addEventListener('click', function () {
+                    cell.classList.toggle('clicked');
+                });
+                matrixContainer.appendChild(cell);
+
+                currentNumber++;
+                if (currentNumber > cols) {
+                    currentNumber = 1;
+                    currentLetter = String.fromCharCode(currentLetter.charCodeAt(0) + 1);
+                }
+            }
+            selectSeats();
+        }
+
+        document.getElementById('login-button').addEventListener('click', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const adminInterface = document.getElementById('admin-interface');
+
+
+            if (email === 'admin@admin.com') {
+                adminInterface.style.display = 'block';
+                matrixContainer.style.display = 'block';
+
+            } else {
+                adminInterface.style.display = 'none';
+                matrixContainer.style.display = 'block';
+                
+            }
+        });
+        document.getElementById('setBtn').addEventListener('click', function () {
+            rows = document.getElementById('rows').value;
+            cols = document.getElementById('columns').value;
+            generateSeat();
+        });
+
+        function selectSeats() {
+            seats.forEach(seat => {
+                seats.addEventListener('click', function () {
+                    if (!seat.selected) {
+                        seat.selected = true;
+                        seat.classList.add('selected');
+                    } else {
+                        seat.selected = false;
+                        seat.classList.remove('selected');
+                    }
+
+                })
+            })
+            updateReservationDetails();
+        }
+        function updateReservationDetails() {
+
+            let selected = seats.filter(seat => seat.selected);
+            let name = document.getElementById('name').value;
+            let surname = document.getElementById('surname').value;
+            let age = parseInt(document.getElementById('age').value);
+            var total = selected.reduce((sum, seat) => {
+                if (0 <= age || age < 18 || age >= 65) {
+                    return sum + 10;
+                } else if (age >= 18 && age < 26) {
+                    return sum + 15;
+                } else {
+                    return sum + 25;
+                }
+            }, 0);
+            userName.textContent = `${name} ${surname}`;
+            selectedSeats.textContent = selected.map(seat => seat.cell.textContent).join(', ');
+            totalPrice.textContent = total;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seating Arrangement</title>
+    <style>
+        /* Center the container horizontally */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: green;
+        }
+
+        /* Add spacing between rows and columns */
+        td {
+            margin: 0 5px 5px 0; /* Adjust spacing as needed */
+        }
+
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Tooltip arrow */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Show the tooltip text when hovering */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Seating Arrangement</h1>
+            <label for="rows">Enter the number of rows:</label>
+            <input type="number" id="rows" name="rows">
+            <br>
+            <label for="columns">Enter the number of columns:</label>
+            <input type="number" id="columns" name="columns">
+            <br>
+            <button onclick="generateSeating()">Set</button>
+            <table id="seatingTable">
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function generateSeating() {
+            var rows = parseInt(document.getElementById("rows").value);
+            var columns = parseInt(document.getElementById("columns").value);
+
+            var seatingTable = document.getElementById("seatingTable");
+            seatingTable.innerHTML = ""; // Clear any existing table content
+
+            // Generate the seating arrangement matrix
+            for (var i = 0; i < rows; i++) {
+                var row = document.createElement("tr");
+                for (var j = 0; j < columns; j++) {
+                    var cell = document.createElement("td");
+                    var columnName = String.fromCharCode(65 + j); // Convert column index to letters (A, B, C...)
+                    cell.setAttribute("id", columnName + (i + 1)); // Set id attribute for the cell
+                    cell.textContent = columnName + (i + 1); // Concatenate column letter with row number
+                    cell.addEventListener("click", toggleSeat); // Add click event listener to toggle seat selection
+                    cell.classList.add("tooltip"); // Add class for tooltip
+                    var tooltip = document.createElement("span");
+                    tooltip.classList.add("tooltiptext");
+                    tooltip.textContent = "Price: $10"; // Example price information
+                    cell.appendChild(tooltip);
+                    row.appendChild(cell);
+                }
+                seatingTable.appendChild(row);
+            }
+        }
+
+        function toggleSeat(event) {
+            var seat = event.target;
+            if (seat.classList.contains("selected")) {
+                // Seat is already selected, deselect it
+                seat.classList.remove("selected");
+            } else {
+                // Seat is not selected, select it
+                seat.classList.add("selected");
+            }
+        }
+    </script>
+</body>
+</html>

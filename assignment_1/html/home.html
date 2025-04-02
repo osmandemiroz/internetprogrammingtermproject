@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .header img {
+      margin: auto;
+      padding: 15px;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Styles for navbar */
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .nav a {
+      padding: 8px 8px 8px 32px;
+      color: #000000;
+    }
+
+    .nav a:hover {
+      color: #000000;
+      background-color: #d97272;
+    }
+
+    .active {
+      background-color: #d772722b;
+      font-weight: bold;
+      font-size: large;
+    }
+
+    /* Styles for content */
+    .content {
+      padding: 20px;
+    }
+
+    .content .img {
+      margin: 0;
+      padding: 15px;
+      width: 100%;
+      height: auto;
+    }
+
+    .content .img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Styles for footer */
+    .footer {
+      font-style: italic;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <img src="https://www.eskisehir.edu.tr/images/estu_logo_vektorel.svg" alt="eskisehirteknikvector">
+    </header>
+  </div>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="university.html">University</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="academics.html">Academics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="campuslife.html">Campus Life</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <a class="nav-link" href="students.html">Students</a>
+              <div class="dropdown-content">
+                <a href="login.html">Student Login</a>
+                <a href="documents.html">Documents</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="col-md-10 content">
+        <div class="row">
+          <h1>Home</h1>
+          <div class="col-md-6">
+            <img class="img"
+              src="https://www.eskisehirapartlar.com.tr/wp-content/uploads/2019/07/eskisehir-teknik-universitesi-ne-zaman-kuruldu-1.jpg"
+              alt="eskisehir-teknik-universitesi">
+          </div>
+          <div class="col-md-6">
+            <h4>Announcements</h4>
+            <ul>
+              <li>
+                Announcement on the Exam Calendar for Common Code Courses for
+                the 2023-2024 Academic Year Spring Semester
+              </li>
+              <li>
+                2023-2024 Academic Year Spring Semester Inter-Institutional
+                Horizontal Transfer, Intra-Institutional Horizontal Transfer,
+                Horizontal Transfer with Central Placement Score (Additional
+                Article-1), Double Major, Minor, Interdisciplinary Minor
+                Application Announcement
+              </li>
+              <li>...</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">
+        © Osman Demiröz 2024
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

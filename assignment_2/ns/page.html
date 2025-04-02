@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theater Reservation System</title>
+    <style>
+        /* Add your CSS styles here */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .left,
+        .center,
+        .right {
+            width: 30%;
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+
+        .seating {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .seat {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Part - User Input -->
+        <div class="left">
+            <h2>User Information</h2>
+            <form id="userForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname">
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone">
+                <label for="age">Age:</label>
+                <input type="number" id="age">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Center Part - Admin & User Interface -->
+        <div class="center" id="center">
+            <!-- Admin Interface -->
+            <div id="adminInterface" style="display: none;">
+                <h2>Admin Interface</h2>
+                <label for="rows">Rows:</label>
+                <input type="number" id="rows">
+                <label for="columns">Columns:</label>
+                <input type="number" id="columns">
+                <button id="setBtn">Set</button>
+            </div>
+
+            <!-- User Interface -->
+            <div id="userInterface" style="display: none;">
+                <h2>User Interface</h2>
+                <div class="seating" id="seating">
+                    <!-- Seating matrix will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Part - Reservation Details -->
+        <div class="right" id="right" style="display: none;">
+            <h2>Reservation Details</h2>
+            <p>Name: <span id="userName"></span></p>
+            <p>Selected Seats: <span id="selectedSeats"></span></p>
+            <p>Total Price: $<span id="totalPrice"></span></p>
+            <button id="confirmBtn">Confirm</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code
+        const userForm = document.getElementById('userForm');
+        const adminInterface = document.getElementById('adminInterface');
+        const userInterface = document.getElementById('userInterface');
+        const seating = document.getElementById('seating');
+        const userName = document.getElementById('userName');
+        const selectedSeats = document.getElementById('selectedSeats');
+        const totalPrice = document.getElementById('totalPrice');
+        const confirmBtn = document.getElementById('confirmBtn');
+
+        let currentUser = null;
+        let rows = 0;
+        let columns = 0;
+        let seats = [];
+
+        userForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const age = parseInt(document.getElementById('age').value);
+
+            if (email === 'a@a') {
+                currentUser = {
+                    name,
+                    surname,
+                    email,
+                    phone,
+                    age,
+                    role: 'admin',
+                    ticketPrice: 0
+                };
+                adminInterface.style.display = 'block';
+                document.getElementById('right').style.display = 'block';
+            } else {
+                currentUser = {
+                    name,
+                    surname,
+                    email,
+                    phone,
+                    age,
+                    role: 'user',
+                    ticketPrice: 0
+                };
+                userInterface.style.display = 'block';
+                document.getElementById('right').style.display = 'block';
+            }
+        });
+
+        document.getElementById('setBtn').addEventListener('click', () => {
+            rows = parseInt(document.getElementById('rows').value);
+            columns = parseInt(document.getElementById('columns').value);
+            generateSeatingMatrix(rows, columns);
+        });
+
+        function generateSeatingMatrix(rows, columns) {
+            let seatNumber = 1;
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < columns; j++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.textContent = `${currentLetter}${currentNumber}`;
+
+                    seats.push({ row: i + 1, column: j + 1, number: seatNumber, selected: false });
+                    seatNumber++;
+                }
+            }
+            displaySeatingMatrix();
+        }
+
+        function displaySeatingMatrix() {
+            seating.innerHTML = '';
+            seats.forEach(seat => {
+                const seatDiv = document.createElement('div');
+                seatDiv.classList.add('seat');
+                seatDiv.textContent = seat.number;
+                seatDiv.addEventListener('click', () => {
+                    if (!seat.selected) {
+                        seat.selected = true;
+                        seatDiv.classList.add('selected');
+                    } else {
+                        seat.selected = false;
+                        seatDiv.classList.remove('selected');
+                    }
+                    updateReservationDetails();
+                });
+                seating.appendChild(seatDiv);
+            });
+        }
+
+        function updateReservationDetails() {
+            const selected = seats.filter(seat => seat.selected);
+            const total = selected.reduce((acc, seat) => {
+                if (currentUser.age < 18 || currentUser.age >= 65) {
+                    return acc + 10;
+                } else if (currentUser.age >= 18 && currentUser.age < 26) {
+                    return acc + 15;
+                } else {
+                    return acc + 25;
+                }
+            }, 0);
+            userName.textContent = `${currentUser.name} ${currentUser.surname}`;
+            selectedSeats.textContent = selected.map(seat => seat.number).join(', ');
+            totalPrice.textContent = total;
+        }
+
+        confirmBtn.addEventListener('click', () => {
+            alert(`Reservation confirmed:
+            Name: ${currentUser.name} ${currentUser.surname}
+            Selected Seats: ${selectedSeats.textContent}
+            Total Price: $${totalPrice.textContent}`);
+        });
+    </script>
+</body>
+
+</html>
