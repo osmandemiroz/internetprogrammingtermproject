@@ -16,45 +16,49 @@
 <body id="page1">
     <div class="container">
         <div class="row">
-            <img id="logo" src="./images/logo.png" alt="logo">
+            <div class="col-12">
+                <img id="logo" src="./images/logo.png" alt="logo" class="img-fluid">
+            </div>
         </div>
 
         <div class="row">
-            <div class="col-2">
+            <div class="col-12 col-md-2">
                 <nav class="navbar navbar-light bg-light">
-                    <div id="content" class="container">
-                        <a class="link1" href="./home.html">
-                            <header><strong>Home</strong></header>
-                        </a>
-                    </div>
-                    <div id="content" class="container">
-                        <a class="link2" href="./university.html">
-                            <header><strong>University</strong></header>
-                        </a>
-                    </div>
-                    <div id="content" class="container">
-                        <a class="link3" href="./academics.html">
-                            <header><strong>Academics</strong></header>
-                        </a>
-                    </div>
-                    <div id="students" class="container">
-                        <a class="link4" href="./students.html">
-                            <header><strong>Students</strong></header>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="./login.html">Login</a>
-                            <a href="./documents.html">Documents</a>
+                    <div class="container-fluid">
+                        <div class="nav-item">
+                            <a class="link1" href="./home.html">
+                                <header><strong>Home</strong></header>
+                            </a>
                         </div>
-                    </div>
-                    <div id="content" class="container">
-                        <a class="link5" href="./campuslife.html">
-                            <header><strong>Campus Life</strong></header>
-                        </a>
+                        <div class="nav-item">
+                            <a class="link2" href="./university.html">
+                                <header><strong>University</strong></header>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="link3" href="./academics.html">
+                                <header><strong>Academics</strong></header>
+                            </a>
+                        </div>
+                        <div class="nav-item" id="students">
+                            <a class="link4" href="./students.html">
+                                <header><strong>Students</strong></header>
+                            </a>
+                            <div class="sub-menu">
+                                <a href="./login.html">Login</a>
+                                <a href="./documents.html">Documents</a>
+                            </div>
+                        </div>
+                        <div class="nav-item">
+                            <a class="link5" href="./campuslife.html">
+                                <header><strong>Campus Life</strong></header>
+                            </a>
+                        </div>
                     </div>
                 </nav>
             </div>
-            <div class="col-10">
-                <div id="content" class="row">
+            <div class="col-12 col-md-10">
+                <div class="content-wrapper">
                     <div class="slider">
                         <div class="slide-container">
                             <div class="slide">
@@ -69,7 +73,7 @@
                         </div>
                     </div>
                     <header><strong>Announcements</strong></header>
-                    <ul>
+                    <ul class="announcements-list">
                         <a href="https://www.eskisehir.edu.tr/tr/Duyuru/Detay/ogrencilerimizin-dikkatine-estu-ford-otosan-yazilim-ofisi-takim-uyesi-adaylari-araniyor"
                             target="_blank">
                             <li><em>Attention to Our Students: ESTU Ford Otosan Software Office Team Member Candidates
@@ -91,9 +95,9 @@
                             target="_blank">
                             <li><em>18 March Martyrs' Day Administrative Leave Announcement</em></li>
                         </a>
-                        <a href="https://www.eskisehir.edu.tr/tr/Duyuru/Detay/2023-2024-akademik-yili-bahar-donemi-ortak-kodlu-derslerin-sinav-takvimine-iliskin-duyuru"
+                        <a href="https://www.eskisehir.edu.tr/tr/Duyuru/Detay/2024 - 2025-akademik-yili-bahar-donemi-ortak-kodlu-derslerin-sinav-takvimine-iliskin-duyuru"
                             target="_blank">
-                            <li><em>Announcement Regarding the Exam Calendar for 2023-2024 Spring Term Common Code
+                            <li><em>Announcement Regarding the Exam Calendar for 2024 - 2025 Spring Term Common Code
                                     Courses</em></li>
                         </a>
                         <a href="https://www.eskisehir.edu.tr/tr/Duyuru/Detay/ogrencilerimizin-dikkatine-estu-teknotam-akademi-basliyor"
@@ -105,9 +109,11 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>Copyright © 2024 Eskisehir Technical University. All rights reserved.</p>
-        <p>Author : Osman Demiröz</p>
+    <footer class="footerbottom">
+        <div class="container">
+            <p>Copyright © 2024 Eskisehir Technical University. All rights reserved.</p>
+            <p>Author : Osman Demiröz</p>
+        </div>
     </footer>
 </body>
 
