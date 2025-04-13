@@ -2,147 +2,144 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Life</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .header img {
-      margin: auto;
-      padding: 15px;
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Styles for navbar */
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .nav a {
-      padding: 8px 8px 8px 32px;
-      color: #000000;
-    }
-
-    .nav a:hover {
-      color: #000000;
-      background-color: #d97272;
-    }
-
-    .active {
-      background-color: #d772722b;
-      font-weight: bold;
-      font-size: large;
-    }
-
-    /* Styles for content */
-    .content {
-      padding: 20px;
-    }
-
-    .video-container {
-      position: relative;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
-      padding-bottom: 56.25%;
-      /* 16:9 aspect ratio (9 / 16 * 100) */
-      overflow: hidden;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      margin: 0;
-      padding: 15px;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Styles for footer */
-    .footer {
-      font-style: italic;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header img {
+            margin: auto;
+            padding: 15px;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        /* Styles for navbar */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .nav a {
+            padding: 8px 8px 8px 32px;
+            color: #000000;
+        }
+        
+        .nav a:hover {
+            color: #000000;
+            background-color: #d97272;
+        }
+        
+        .active {
+            background-color: #d772722b;
+            font-weight: bold;
+            font-size: large;
+        }
+        /* Styles for content */
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .video-container {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio (9 / 16 * 100) */
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            margin: 0;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+        }
+        /* Styles for footer */
+        
+        .footer {
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="header">
-    <header>
-      <img src="https://www.eskisehir.edu.tr/images/estu_logo_vektorel.svg" alt="eskisehirteknikvector">
-    </header>
-  </div>
-  <hr>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2 side-navbar">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="university.html">University</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="academics.html">Academics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="campuslife.html">Campus Life</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <a class="nav-link" href="students.html">Students</a>
-              <div class="dropdown-content">
-                <a href="login.html">Student Login</a>
-                <a href="documents.html">Documents</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-md-10 content">
-        <div class="row">
-          <h1>Campus Life</h1>
-          <div class="col-md-12 video-container">
-            <iframe class="video" src="https://www.youtube.com/embed/eLQQmroQrZM?si=4tFcJwIRg-Rd5ass"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-
-          <!-- Add your content here -->
-        </div>
-      </div>
+    <div class="header">
+        <header>
+            <img src="https://www.eskisehir.edu.tr/images/estu_logo_vektorel.svg" alt="eskisehirteknikvector">
+        </header>
     </div>
-  </div>
-  <div class="footer">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-4 mb-0 text-body-secondary">
-        © Osman Demiröz 2024
-      </p>
-    </footer>
-  </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 side-navbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="university.html">University</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="campuslife.html">Campus Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link" href="students.html">Students</a>
+                            <div class="dropdown-content">
+                                <a href="login.html">Student Login</a>
+                                <a href="documents.html">Documents</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-10 content">
+                <div class="row">
+                    <h1>Campus Life</h1>
+                    <div class="col-md-12 video-container">
+                        <iframe class="video" src="https://www.youtube.com/embed/eLQQmroQrZM?si=4tFcJwIRg-Rd5ass" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Add your content here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">
+                © Osman Demiröz 2024
+            </p>
+        </footer>
+    </div>
 </body>
 
 </html>
